@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Montserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Font End -->
+</head>
+<body>
+    
+    <!-- Nav -->
+    <nav class="navbar">
+        <div class="content">
+            <span class="button effect heading">
+                Whiteboard
+            </span>
+            <div class="intructions">
+                <svg width="86" height="56" viewBox="0 0 86 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="53.688" y1="1.41421" x2="1.41419" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="68.8441" y1="1.41421" x2="16.5702" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="84" y1="1.41421" x2="31.7261" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Canvas -->
+        <canvas id="art-board">
+
+        </canvas>
+
+    <!-- Controls -->
+    <section>
+        <div class="controls">
+            <button class="icons pen-tool drawing" onclick="pencil()" type="button" >
+                <img  src="./assets/img/pen.png" alt="pen-tool" srcset="">
+            </button>
+            <button class= "icons eraser-tool">
+                <img  src="./assets/img/eraser.png" alt="pen-tool" srcset="">
+            </button>
+            <button class= "icons fill-tool">
+                <img  src="./assets/img/paint-bucket.png" alt="pen-tool" srcset="">
+            </button>
+            <button class= "icons delete-tool">
+                <img  src="./assets/img/delete.png" alt="pen-tool" srcset="">
+            </button>
+            <button class= "icons colour-tool">
+                <img  src="./assets/img/Rectangle 2.png" alt="pen-tool" srcset="">
+            </button>
+
+            <button class= "icons line-tool">
+                <img  src="./assets/img/Line 1.png" alt="pen-tool" srcset="">
+            </button>
+
+            <button class= "icons undo">
+                <img  src="./assets/img/undo.png" alt="pen-tool" srcset="">
+            </button>
+            <button class= "icons redo">
+                <img  src="./assets/img/redo.png" alt="pen-tool" srcset="">
+            </button>
+        </div>
+    </section>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

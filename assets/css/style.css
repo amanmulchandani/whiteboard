@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #F4F4F4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 90%;
+}
+#art-board{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+section{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    margin-bottom: 25px;
+}
+
+button{
+    background: transparent;
+    border: transparent;
+    outline: none;
+}
+
+
+.icons{
+    margin: 0px 25px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+.icons:hover{
+    background: rgba(167, 215, 231, 1);
+}
+
+.icons:focus{
+    outline: 0.5px solid rgb(51, 148, 180);
+}
+
+.icons img{
+    height: 25px;
+}
+
+.button {
+    position: relative;
+    padding: 1em 1.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+}
+
+.button.effect {
+    color: grey;
+}
+
+.button.effect.effect::after,
+.button.effect.effect::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+}
+
+.button.effect.effect::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: lightcoral;
+    border-right-color: lightcoral;
+}
+
+.button.effect.effect::before {
+    top: 0;
+    left: 0;
+    border-top-color: lightblue;
+    border-left-color: lightblue;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+
+.button.effect.effect:hover::after{
+    border: 2px solid lightcoral;
+    width: 100%;
+    height: 100%;
+}
+
+.button.effect.effect:hover::before {
+    border: 2px solid lightblue;
+    width: 100%;
+    height: 100%;
+}
