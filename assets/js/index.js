@@ -5,7 +5,6 @@ let clear = document.getElementById('clear');
 let colorPicker = document.getElementById('colorpicker-tool');
 let paintBucket = document.getElementById('paint-tool');
 let lineTool = document.getElementById('line-tool');
-// let Save = document.getElementById('save');
 let ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -28,15 +27,6 @@ let lastX = 0,
     lastY = 0;
 let isMouseDown = false;
 
-// Download utility function
-let download = function () {
-    let link = document.createElement('a');
-    link.download = 'filename.png';
-    link.href = document.getElementById('board').toDataURL();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
 
 function pencilColor(){
     drawColor = colorPicker.value;
@@ -106,7 +96,6 @@ paintBucket.addEventListener('click', (e) =>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     paintBucketFill();
 });
-
 
 lineTool.addEventListener('click', (e) => {
     ctx.globalCompositeOperation = 'source-over';
