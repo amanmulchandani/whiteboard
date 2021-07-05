@@ -47,16 +47,16 @@
             <button id="eraser-tool" class= "icons">
                 <img  src="./assets/img/eraser.png" alt="eraser-tool" srcset="">
             </button>
-            <button class= "icons fill-tool">
-                <img  src="./assets/img/paint-bucket.png" alt="paintbucket-tool" srcset="">
+            <button id="paint-tool" class= "icons fill-tool">
+                <img  src="./assets/img/paint-bucket.png" alt="paint-tool" srcset="">
             </button>
             <button id="clear" class= "icons">
                 <img  src="./assets/img/delete.png" alt="delete-tool" srcset="">
             </button>
-            <!-- <button class= "icons colour-tool">
-                <input oninput = "draw_color = this.value" type="color" class="color-picker" id="colorpicker-tool">
+            <button class= "icons colour-tool">
+                <input onchange = "pencilColor()"  type="color" class="color-picker" id="colorpicker-tool" value="#000000">
             </button>
-
+            <!--
             <button class= "icons line-tool">
                 <img  src="./assets/img/Line 1.png" alt="line-tool" srcset="">
             </button>

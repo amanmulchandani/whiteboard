@@ -1,30 +1,35 @@
-var canvas = document.getElementById('art-board');
-
-var BlackPen = document.getElementById('pen-tool');
-var Rubber = document.getElementById('eraser-tool');
-var Clear = document.getElementById('clear');
-var Save = document.getElementById('save');
-var ctx = canvas.getContext('2d');
+let canvas = document.getElementById('art-board');
+let pen = document.getElementById('pen-tool');
+let eraser = document.getElementById('eraser-tool');
+let clear = document.getElementById('clear');
+let colorPicker = document.getElementById('colorpicker-tool');
+let paintBucket = document.getElementById('paint-tool');
+// let Save = document.getElementById('save');
+let ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ctx.lineCap = 'round';
 ctx.lineWidth = 2;
 
-var makeBgWhite = function () {
+let makeBgWhite = function () {
     ctx.fillStyle = '#ffffff';
     ctx.globalCompositeOperation = 'destination-over';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
 
+
 makeBgWhite();
 
-var lastX = 0,
+let drawColor = "black";
+colorPicker.value = "black";
+
+let lastX = 0,
     lastY = 0;
-var isMouseDown = false;
+let isMouseDown = false;
 
 // Download utility function
-var download = function () {
-    var link = document.createElement('a');
+let download = function () {
+    let link = document.createElement('a');
     link.download = 'filename.png';
     link.href = document.getElementById('board').toDataURL();
     document.body.appendChild(link);
@@ -32,10 +37,29 @@ var download = function () {
     document.body.removeChild(link);
 };
 
+function pencilColor(){
+    drawColor = colorPicker.value;
+    console.log(drawColor);
+    ctx.strokeStyle = drawColor;
+}
+
+let paintBucketFill = () =>{
+    ctx.fillStyle = drawColor;
+    ctx.globalCompositeOperation = 'destination-over';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    console.log(ctx.fillStyle)
+}
+
+
 canvas.addEventListener('mousedown', (e) => {
     lastX = e.offsetX;
     lastY = e.offsetY;
     isMouseDown = true;
+});
+
+canvas.addEventListener('mouseenter', (e) => {
+    lastX = e.offsetX;
+    lastY = e.offsetY;
 });
 
 canvas.addEventListener('mousemove', (e) => {
@@ -51,22 +75,33 @@ canvas.addEventListener('mousemove', (e) => {
 canvas.addEventListener('mouseup', (e) => {
     isMouseDown = false;
 });
-BlackPen.addEventListener('click', (e) => {
+
+//! Controls
+
+pen.addEventListener('click', (e) => {
     ctx.globalCompositeOperation = 'source-over';
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = drawColor;
+    
     ctx.lineWidth = 1;
-    console.log("writing");
+    console.log("Pen in Action");
 });
-Rubber.addEventListener('click', (e) => {
+eraser.addEventListener('click', (e) => {
     ctx.globalCompositeOperation = 'source-over';
     ctx.lineWidth = 20;
-    ctx.strokeStyle = 'rgba(255,255,255,1)';
+    ctx.strokeStyle = 'white';
+    console.log("Eraser in Action");
 });
 
-Clear.addEventListener('click', (e) => {
+paintBucket.addEventListener('click', (e) =>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    paintBucketFill();
+});
+
+clear.addEventListener('click', (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     makeBgWhite();
 });
-Save.addEventListener('click', (e) => {
-    download();
-});
+
+// Save.addEventListener('click', (e) => {
+//     download();
+// });
