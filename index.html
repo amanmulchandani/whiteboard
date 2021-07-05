@@ -39,34 +39,37 @@
     <!-- Controls -->
     <section>
         <div class="controls">
-            <button class="icons pen-tool drawing" onclick="pencil()" type="button" >
+            <!-- <button id="pen-tool" class="icons" onclick="pencil()" > -->
+            <button id="pen-tool" class="icons" >
                 <img  src="./assets/img/pen.png" alt="pen-tool" srcset="">
             </button>
-            <button class= "icons eraser-tool">
-                <img  src="./assets/img/eraser.png" alt="pen-tool" srcset="">
+            <!-- <button class= "icons eraser-tool" onclick="eraser()"> -->
+            <button id="eraser-tool" class= "icons">
+                <img  src="./assets/img/eraser.png" alt="eraser-tool" srcset="">
             </button>
             <button class= "icons fill-tool">
-                <img  src="./assets/img/paint-bucket.png" alt="pen-tool" srcset="">
+                <img  src="./assets/img/paint-bucket.png" alt="paintbucket-tool" srcset="">
             </button>
-            <button class= "icons delete-tool">
-                <img  src="./assets/img/delete.png" alt="pen-tool" srcset="">
+            <button id="clear" class= "icons">
+                <img  src="./assets/img/delete.png" alt="delete-tool" srcset="">
             </button>
-            <button class= "icons colour-tool">
-                <img  src="./assets/img/Rectangle 2.png" alt="pen-tool" srcset="">
+            <!-- <button class= "icons colour-tool">
+                <input oninput = "draw_color = this.value" type="color" class="color-picker" id="colorpicker-tool">
             </button>
 
             <button class= "icons line-tool">
-                <img  src="./assets/img/Line 1.png" alt="pen-tool" srcset="">
+                <img  src="./assets/img/Line 1.png" alt="line-tool" srcset="">
             </button>
 
-            <button class= "icons undo">
-                <img  src="./assets/img/undo.png" alt="pen-tool" srcset="">
+            <button class= "icons undo" onclick="undo_last()">
+                <img  src="./assets/img/undo.png" alt="undo-tool" srcset="">
             </button>
-            <button class= "icons redo">
-                <img  src="./assets/img/redo.png" alt="pen-tool" srcset="">
-            </button>
+            <button class= "icons redo" onclick="redo_last()">
+                <img  src="./assets/img/redo.png" alt="redo-tool" srcset="">
+            </button> -->
         </div>
     </section>
-    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

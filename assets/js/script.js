@@ -116,16 +116,6 @@ function enterText(){
     }
 // check = false;
 function pencil(){
-    //     function draw(e) {
-    //         if(is_drawing){
-    //             ctx.lineTo(e.clientX - canvas.offsetLeft , e.clientY - canvas.offsetTop);
-    //             ctx.strokeStyle = draw_color;
-    //             ctx.lineWidth = 20;
-    //             ctx.lineCap = "round";
-    //             ctx.lineJoin = "round";
-    //             ctx.stroke();
-    //         }
-    //     }
 
 var pos = { x: 0, y: 0};
 document.addEventListener('mousemove', draw);
