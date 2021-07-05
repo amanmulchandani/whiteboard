@@ -125,14 +125,14 @@ clear.addEventListener('click', (e) => {
 
 
 //Instractions
-const open = document.getElementById('open');
-const modal_container = document.getElementById('modal_container')
-const close = document.getElementById('close');
+const openButton = document.getElementById('open');
+const modalContainer = document.getElementById('modal_container')
+// const closeButton = document.getElementById('close');
 
-open.addEventListener('click', () => {
-    modal_container.classList.add('show');
+openButton.addEventListener('click', () => {
+    modalContainer.classList.toggle('show');
 });
 
-close.addEventListener('click', () => {
-    modal_container.classList.remove('show');
-});
+// closeButton.addEventListener('click', () => {
+//     modalContainer.classList.toggle('show');
+// });
