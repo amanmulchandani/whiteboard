@@ -21,12 +21,69 @@
             <span class="button effect heading">
                 Whiteboard
             </span>
-            <div class="intructions">
-                <svg width="86" height="56" viewBox="0 0 86 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="53.688" y1="1.41421" x2="1.41419" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="68.8441" y1="1.41421" x2="16.5702" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="84" y1="1.41421" x2="31.7261" y2="53.6881" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+            <div class="intructions" id="open">
+                <div class="burger button effect">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+            <div class="modal-container" id="modal_container">
+                <div class="modal">
+                    <h2>Instructions</h2>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/pen.png" alt="pen-tool" srcset="">
+                        <div class="ins">
+                            <div>Pen tool</div>
+                            <div>Used for drawing </div>
+                        </div>
+                    </div>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/eraser.png" alt="eraser" srcset="">
+                        <div class="ins">
+                            <div>Eraser</div>
+                            <div>Used for erasing drawings </div>
+                        </div>
+                    </div>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/paint-bucket.png" alt="paint bucket tool" srcset="">
+                        <div class="ins">
+                            <div>Paint Bucket Tool</div>
+                            <div>Used for filling paint within specific boundaries </div>
+                        </div>
+                    </div>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/delete.png" alt="clear" srcset="">
+                        <div class="ins">
+                            <div>Clear</div>
+                            <div>Used for clearing everything in the canvas </div>
+                        </div>
+                    </div>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/Rectangle 2.png" alt="rectangle" srcset="">
+                        <div class="ins">
+                            <div>Rectangle</div>
+                            <div>Used for creating a rectangle </div>
+                        </div>
+                    </div>
+        
+                    <div class="adjust">
+                        <img  src="./assets/img/Line 1.png" alt="line" srcset="">
+                        <div class="ins">
+                            <div>Line tool</div>
+                            <div>Used for creating line between two specific points </div>
+                        </div>
+                    </div>
+                    <div class="close-button">
+                        <button id="close" class="button effect mid">Close</button>
+                    </div>
+        
+                </div>
             </div>
         </div>
     </nav>
