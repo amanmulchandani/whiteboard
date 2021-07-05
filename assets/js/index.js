@@ -4,6 +4,7 @@ let eraser = document.getElementById('eraser-tool');
 let clear = document.getElementById('clear');
 let colorPicker = document.getElementById('colorpicker-tool');
 let paintBucket = document.getElementById('paint-tool');
+let lineTool = document.getElementById('line-tool');
 // let Save = document.getElementById('save');
 let ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -16,7 +17,7 @@ let makeBgWhite = function () {
     ctx.globalCompositeOperation = 'destination-over';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 };
-
+let posX, posY;
 
 makeBgWhite();
 
@@ -54,7 +55,17 @@ let paintBucketFill = () =>{
 canvas.addEventListener('mousedown', (e) => {
     lastX = e.offsetX;
     lastY = e.offsetY;
+    posX = e.offsetX;
+    posY = e.offsetY;
     isMouseDown = true;
+});
+
+canvas.addEventListener('mouseup', (e) => {
+    lastX = e.offsetX;
+    lastY = e.offsetY;
+    posX = e.offsetX;
+    posY = e.offsetY;
+    isMouseDown = false;
 });
 
 canvas.addEventListener('mouseenter', (e) => {
@@ -72,9 +83,7 @@ canvas.addEventListener('mousemove', (e) => {
     lastY = e.offsetY;
 });
 
-canvas.addEventListener('mouseup', (e) => {
-    isMouseDown = false;
-});
+
 
 //! Controls
 
@@ -82,7 +91,7 @@ pen.addEventListener('click', (e) => {
     ctx.globalCompositeOperation = 'source-over';
     ctx.strokeStyle = drawColor;
     
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 3;
     console.log("Pen in Action");
 });
 eraser.addEventListener('click', (e) => {
@@ -93,15 +102,22 @@ eraser.addEventListener('click', (e) => {
 });
 
 paintBucket.addEventListener('click', (e) =>{
+    ctx.globalCompositeOperation = 'source-over';
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     paintBucketFill();
+});
+
+
+lineTool.addEventListener('click', (e) => {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.beginPath(); 
+
+   ctx.moveTo(posX, posY);
+    ctx.lineTo(posX, posY);
+  ctx.stroke();
 });
 
 clear.addEventListener('click', (e) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     makeBgWhite();
 });
-
-// Save.addEventListener('click', (e) => {
-//     download();
-// });
